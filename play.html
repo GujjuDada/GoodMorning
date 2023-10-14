@@ -1,0 +1,64 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width,minimum-scale=1,initial-scale=1' name='viewport' />
+    <link rel="stylesheet" href="https://streamhub.eu.org/BigBossOTT/css/jw.css?id=1">
+    <title>Video Player</title>
+    <style>
+body {
+background-color: #FFFFFF;
+padding:2px;
+}
+                              
+.player-container {
+width: 100%;
+height: auto;
+background-color: #FFFFFF;
+box-shadow: 8px 8px 16px #FFFFFF, -8px -8px 16px #ffffff;
+border-radius: 20px;
+padding:2px;
+overflow: hidden;
+word-break:break-all;
+}
+
+</style>
+                                                                                                              <script type='text/javascript' src='https://content.jwplatform.com/libraries/IDzF9Zmk.js'></script>
+                                                                                                              </head>
+                                                                                                              <body>
+                                                                                                              <div class="player-container">
+                                                                                                              <video id="video"></video>
+                                                                                                              </div>
+                                                                                                              <script type="text/JavaScript">
+
+                                                                                                              const params = new URLSearchParams(window.location.search);
+                                                                                                              const vidd = params.get('id');
+
+                                                                                                              const playerInstance =    jwplayer("video").setup({ 
+                                                                                                                       controls: true,
+                                                                                                                               "playlist": [{
+                                                                                                                                          "sources": [
+                                                                                                                                                  {
+                                                                                                                                                            "default": false,
+                                                                                                                                                                      "type": "hls",
+                                                                                                                                                                                
+                                                                                                                                                                                          "file": vidd,          
+                                                                                                                                                                                                    "label": "0"
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                                  ],
+                                                                                                                                                                                                                          }],
+                                                                                                                                                                                                                           "primary": "html5",
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                              "hlshtml": true,
+                                                                                                                                                                                                                                "autostart": false,
+                                                                                                                                                                                                                                        "image": "https://i.postimg.cc/RC1LvKfn/f0f9008e2c2562b9fb1bb.jpg"
+                                                                                                                                                                                                                                                }).on('ready', function() {
+                                                                                                                                                                                                                                                    var video = document.getElementById(this.id).getElementsByTagName('video')[0];
+                                                                                                                                                                                                                                                        if (video) video.setAttribute('poster', this.getConfig().image);
+                                                                                                                                                                                                                                                        });
+
+
+
+                                                                                                                                                                                                                                                        </script>
+                                                                                                                                                                                                                                                        </body>
+                                                                                                                                                                                                                                                        </html>
+                                                                                                                                                                                                                                                        
